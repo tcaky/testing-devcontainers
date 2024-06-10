@@ -1,0 +1,52 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/alpine
+{
+	"name": "Main",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	// "image": "mcr.microsoft.com/devcontainers/base:alpine-3.20",
+	// "features": {
+	// 	"ghcr.io/cirolosapio/devcontainers-features/alpine-curl:0": {},
+	// 	"ghcr.io/cirolosapio/devcontainers-features/alpine-jq:0": {},
+	// 	// "ghcr.io/cirolosapio/devcontainers-features/alpine-ohmyzsh:0": {},
+	// 	"ghcr.io/cirolosapio/devcontainers-features/alpine-starship:0": {}
+	// },
+	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+	"features": {
+		// "ghcr.io/devcontainers/features/powershell:1": {},
+		// "ghcr.io/devcontainers/features/azure-cli:1": {},
+		"ghcr.io/devcontainers/features/python:1": {},
+		// "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        // "ghcr.io/devcontainers/features/terraform:1": {},
+        "ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": "true",
+			"username": "vscode",
+			"upgradePackages": "false",
+			"nonFreePackages": "true"
+		}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+	"customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": { "zsh": { "path": "/bin/zsh" } }
+            },
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"redhat.vscode-yaml",
+				"mechatroner.rainbow-csv"
+			]
+        }
+	},
+	
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "vscode"
+}
