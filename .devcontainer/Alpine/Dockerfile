@@ -15,8 +15,16 @@ ARG USER_GID=$USER_UID
 # These are executing as root, so no `sudo` needed.
 RUN apk update
 
-RUN apk add zsh-theme-powerlevel10k
-# RUN apk add tmux neovim py-pip npm nodejs cargo ripgrep lazygit starship fontforge py3-configargparse
+RUN apk add zsh-theme-powerlevel10k 
+
+# adjust timezone
+RUN apk add tzdata
+RUN ln -s /usr/share/zoneinfo/America/Toronto /etc/localtime
+
+
+RUN apk add tmux neovim
+
+# RUN apk add py-pip npm nodejs cargo ripgrep lazygit starship fontforge py3-configargparse
 
 
 # Switch to non-root user
