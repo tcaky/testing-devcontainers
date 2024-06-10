@@ -28,4 +28,5 @@ RUN sudo mkdir -p ~/.fonts
 
 COPY ./fonts/*.ttf /tmp/fonts/
 RUN sudo cp /tmp/fonts/*.ttf ~/.fonts/
+RUN fc-cache -fv
 
