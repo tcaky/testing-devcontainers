@@ -14,13 +14,18 @@ ARG USER_GID=$USER_UID
 
 # These are executing as root, so no `sudo` needed.
 
-RUN mkdir /usr/share/fonts/MesloLGS
-COPY fonts/* /usr/share/fonts/MesloLGS/
+# RUN mkdir /usr/share/fonts/MesloLGS
+# COPY fonts/* /usr/share/fonts/MesloLGS/
 
 RUN apk update
 
-RUN apk zsh-theme-powerlevel10k
-RUN mkdir -p ~/.local/share/zsh/plugins
-RUN ln -s /usr/share/zsh/plugins/powerlevel10k ~/.local/share/zsh/plugins/
-
+RUN apk add zsh-theme-powerlevel10k
+y
 # RUN apk add tmux neovim py-pip npm nodejs cargo ripgrep lazygit starship fontforge py3-configargparse
+
+
+# Switch to non-root user
+USER ${USERNAME}
+RUN sudo mkdir -p ~/.local/share/zsh/plugins
+RUN sudo ln -s /usr/share/zsh/plugins/powerlevel10k ~/.local/share/zsh/plugins/
+
