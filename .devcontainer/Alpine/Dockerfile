@@ -24,7 +24,7 @@ USER ${USERNAME}
 RUN sudo mkdir -p ~/.local/share/zsh/plugins
 RUN sudo ln -s /usr/share/zsh/plugins/powerlevel10k ~/.local/share/zsh/plugins/
 
-# RUN sudo mkdir -p ~/.fonts/MesloLGS
+RUN sudo mkdir -p ~/.fonts
 
 COPY ./fonts/*.ttf /tmp/fonts/
 RUN sudo cp /tmp/fonts/*.ttf ~/.fonts/
