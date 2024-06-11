@@ -38,7 +38,7 @@ COPY ./fonts/*.ttf /tmp/fonts/
 RUN sudo cp /tmp/fonts/*.ttf ~/.fonts/
 RUN fc-cache -fv
 
-COPY ./extras/.p10k.zsh /tmp/p10k/
-RUN sudo cp /tmp/p10k/* ~
+COPY ./extras/.p10k.zsh /tmp/extras/
+RUN sudo cp /tmp/extras/.p10k.zsh ~/.p10k.zsh
 
 

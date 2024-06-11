@@ -24,7 +24,33 @@
             "settings": {
                 "terminal.integrated.defaultProfile.linux": "zsh",
                 "terminal.integrated.profiles.linux": { "zsh": { "path": "/bin/zsh" } },
-				"terminal.integrated.fontFamily": "MesoLGS NF"
+				"terminal.integrated.fontFamily": "0xProto Nerd Font Mono",
+				// so frustrating.  I had 0xProto working in the terminal yesterday and can't
+				// remember what I had in the terminal.integrated.fontFamily to make it render.
+				// 
+				// terminal.integrated.fontFamily name attempts:
+				// MesloLGS NF
+				// 0xProtoNFM-Regular
+				// 0xProto Nerd Font
+				// 0xProto Nerd Font Mono
+				// 0xProtoNerdFontMono-Regular
+				// 0xProto Nerd Font Mono:style=Regular
+				//
+				// 'fc-list : family' # list all font family names:
+				// MesloLGS NF
+				// 0xProto Nerd Font Propo
+				// 0xProto Nerd Font Mono
+				// 0xProto Nerd Font				
+				//
+				// fc-list output: 
+				// /home/vscode/.fonts/MesloLGS NF Bold Italic.ttf: MesloLGS NF:style=Bold Italic
+				// /home/vscode/.fonts/0xProtoNerdFontPropo-Regular.ttf: 0xProto Nerd Font Propo:style=Regular
+				// /home/vscode/.fonts/MesloLGS NF Regular.ttf: MesloLGS NF:style=Regular
+				// /home/vscode/.fonts/MesloLGS NF Italic.ttf: MesloLGS NF:style=Italic
+				// /home/vscode/.fonts/0xProtoNerdFontMono-Regular.ttf: 0xProto Nerd Font Mono:style=Regular
+				// /home/vscode/.fonts/MesloLGS NF Bold.ttf: MesloLGS NF:style=Bold
+				// /home/vscode/.fonts/0xProtoNerdFont-Regular.ttf: 0xProto Nerd Font:style=Regular
+				"terminal.integrated.letterSpacing": 0
             },
 			"extensions": [
 				"ms-azuretools.vscode-docker",
