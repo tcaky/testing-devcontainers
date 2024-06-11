@@ -24,7 +24,9 @@
             "settings": {
                 "terminal.integrated.defaultProfile.linux": "zsh",
                 "terminal.integrated.profiles.linux": { "zsh": { "path": "/bin/zsh" } },
-				"terminal.integrated.fontFamily": "0xProto Nerd Font Mono",
+				// commenting out for now.
+				// "terminal.integrated.fontFamily": "0xProto Nerd Font Mono",
+
 				// so frustrating.  I had 0xProto working in the terminal yesterday and can't
 				// remember what I had in the terminal.integrated.fontFamily to make it render.
 				// 
