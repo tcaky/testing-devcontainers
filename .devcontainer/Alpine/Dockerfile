@@ -22,7 +22,8 @@ RUN apk add tzdata
 RUN ln -s /usr/share/zoneinfo/America/Toronto /etc/localtime
 
 
-RUN apk add tmux neovim
+RUN apk add tmux neovim 
+# lazygit ripgrep alpine-sdk
 
 # RUN apk add py-pip npm nodejs cargo ripgrep lazygit starship fontforge py3-configargparse
 
@@ -32,13 +33,26 @@ USER ${USERNAME}
 RUN sudo mkdir -p ~/.local/share/zsh/plugins
 RUN sudo ln -s /usr/share/zsh/plugins/powerlevel10k ~/.local/share/zsh/plugins/
 
-RUN sudo mkdir -p ~/.fonts
 
+RUN sudo mkdir -p ~/.local/share/nvim
+RUN sudo mkdir -p ~/.local/state
+# RUN git clone https://github.com/LazyVim/starter ~/.config/nvim
+# RUN rm -rf ~/.config/nvim/.git
+
+
+
+RUN sudo mkdir -p ~/.fonts
 COPY ./fonts/*.ttf /tmp/fonts/
-RUN sudo cp /tmp/fonts/*.ttf ~/.fonts/
+# RUN sudo cp /tmp/fonts/*.ttf ~/.fonts/
+RUN sudo cp /tmp/fonts/0xProtoNerdFontMono-Regular.ttf ~/.fonts/0xProtoNerdFontMono-Regular.ttf
+RUN sudo cp '/tmp/fonts/MesloLGS NF Regular.ttf' '~/.fonts/MesloLGS NF Regular.ttf'
 RUN fc-cache -fv
 
 COPY ./extras/.p10k.zsh /tmp/extras/
 RUN sudo cp /tmp/extras/.p10k.zsh ~/.p10k.zsh
+RUN sudo cp /tmp/extras/.zlogin ~/.zlogin
+RUN sudo cp /tmp/extras/.zprofile ~/.zprofile
+RUN sudo cp /tmp/extras/.zshenv ~/.zshenv
+RUN sudo cp /tmp/extras/.zshrc ~/.zshrc
 
 

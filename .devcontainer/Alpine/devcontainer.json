@@ -52,6 +52,10 @@
 				// /home/vscode/.fonts/0xProtoNerdFontMono-Regular.ttf: 0xProto Nerd Font Mono:style=Regular
 				// /home/vscode/.fonts/MesloLGS NF Bold.ttf: MesloLGS NF:style=Bold
 				// /home/vscode/.fonts/0xProtoNerdFont-Regular.ttf: 0xProto Nerd Font:style=Regular
+				// 
+				// list all fonts on system and rebuild cache
+				// fc-cache -fv
+				
 				"terminal.integrated.letterSpacing": 0
             },
 			"extensions": [
